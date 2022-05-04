@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>OTP</title>
+</head>
+<body style="background-color:#00FFFF;">
+Your OTP is: 
+<p id="demo"></p>
+<!--input type="text" id="odp" -->
+
+
+<!--input type="button" value="Show otp" onclick="fetchOtp()" -->
+
+<script>
+document.getElementById("demo").innerHTML = localStorage.getItem("OTP");
+</script>
+</body>
+</html>
