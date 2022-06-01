@@ -48,6 +48,8 @@ async function checkLogin(loginObj) {
 		localStorage.setItem("FIRST", customer.firstName);
 		localStorage.setItem("LAST", customer.lastName);
 		localStorage.setItem("ACC_BAL", customer.balance);
+		localStorage.setItem("ID", customer.id);
+		localStorage.setItem("PASS", customer.password);
 	window.location.href = UI_URL + '/dashBoard.html';
 
 	}
@@ -556,6 +558,123 @@ async function callFundTransferAPI(transactionObj) {
 	}
 }
 
+//******************************Download Statements********************************
+
+function download()
+{
+const accountNum = localStorage.getItem('ACC_NUM');
+   
+    //callDownloadAPI(accountNum);
+    const url = BASE_URL + '/users/export/pdf/' + accountNum;
+    printPdf(url);
+ }
+ function printPdf(url) {
+        var iframe = document.createElement('iframe');
+        // iframe.id = 'pdfIframe'
+        iframe.className='pdfIframe'
+        document.body.appendChild(iframe);
+        iframe.style.display = 'none';
+        iframe.onload = function () {
+            setTimeout(function () {
+                iframe.focus();
+                iframe.contentWindow.print();
+                URL.revokeObjectURL(url)
+                // document.body.removeChild(iframe)
+            }, 1);
+        };
+        iframe.src = url;
+        // URL.revokeObjectURL(url)
+    }
+ 
+ /*async function callDownloadAPI(accountNum) {
+
+	const url = BASE_URL + '/users/export/pdf/' + accountNum;
+
+	const data = {
+		method: 'GET',
+		headers: {
+			'Accept': 'application/pdf',
+			'Content-Type': 'application/pdf'
+		}
+	};
+
+	const rawResponse = await fetch(url, data);
+	const content = await rawResponse.arraybuffer();
+	window.open(content);
+//	window.location.href = UI_URL + '/bankStatement.html';
+	//console.log(content);
+}	*/
+
+//*****************************Change Password***********************************
+
+function changePass()
+{
+    const password = localStorage.getItem('PASS');
+
+    const oldPass = document.getElementById('oldPass').value;
+    const pass = document.getElementById('newPass').value;
+	const cPass = document.getElementById('confPass').value;
+	if(!oldPass)
+	{
+	alert("Please enter Old Password");
+	return
+	}
+	else if(!pass)
+	{
+	alert("Please enter New Password");
+	return
+	}
+	if(!cPass)
+	{
+	alert("Please enter confirm Password");
+	return
+	}
+	else if(oldPass != password)
+	{
+	alert("Old Password is not correct");
+	return
+	}
+	else if(pass != cPass)
+	{
+	alert("New Password and Confirm Passwords are not matched");
+	return;
+	}
+	else{
+	const customerObj = {};
+	customerObj.password=pass;
+	
+    callCPassAPI(customerObj);
+}
+}
+
+async function callCPassAPI(customerObj) {
+
+	const id = localStorage.getItem('ID');
+
+	const url = BASE_URL + '/changePass/' + id;
+
+	const data = {
+		method: 'PUT',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+	            },
+		body: JSON.stringify(customerObj)
+	};
+
+	const rawResponse = await fetch(url, data);
+	const customer = await rawResponse.json();
+	if(customer)
+	{
+	alert("Password successfully changed");
+	window.location.href = UI_URL + '/login.html';
+	}
+	else
+	{
+	alert("Password is not changed");
+	//console.log(customer);
+	}
+	}
 //*****************************PROFILE*******************************************
 
 function fillProfilePage(){

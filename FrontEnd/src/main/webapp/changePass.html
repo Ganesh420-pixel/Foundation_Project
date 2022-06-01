@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Hugo 0.88.1">
-	<title>Bank Statement</title>
+	<title>Password change</title>
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
 
@@ -74,13 +74,8 @@ margin-left:125px;
 					<li class="nav-item">
                <a class="nav-link active" aria-current="page" href="profile.html">Profile</a>
                  </li>
-					<li class="nav-item">
-                        <a class="nav-link active" aria-current="page" >
-                        <button id ="cb" class="button" onclick="checkBalance()">Balance</button></a>
-                    </li>
+					
 				</ul>
-				&nbsp;
-				&nbsp;
 				<form class="d-flex">
 				 <h4 id="fullName" style="color: aliceblue;">FullName</h4> &nbsp;
 					<h4 id="accountNum" style="color: aliceblue;">Account Number</h4> &nbsp; <a
@@ -89,63 +84,63 @@ margin-left:125px;
 			</div>
 		</div>
 	</nav>
-
-	<br>
-	<br>
-
-	<main class="container">
-		<div class="container">
-     <div class="row">
-<div class="col-lg-3">
-<b>From:</b><input type="text" id="from" placeholder="yyyy-mm-dd">
-</div>
-<div class="col-lg-3">
-<b>To:</b><input type="text" id="to" placeholder="yyyy-mm-dd">
-</div>
-<div class="col-lg-3">
-<button type="button" id="gani" value="Transactions" onclick="ganesh()" class="btn btn-success pull-left">Statements</button>
-</div>
-<div class="col-lg-3">
-<button type="button" id="trans" value="Transactions" onclick="reloadP()" class="btn btn-primary pull-right">All Statements</button>
-</div>
+	
+	<main class="container"><br>
+<h1 class="Head1" style="text-align:center; font-family: Arial, sans-serif; "><strong>Change Password</strong></h1>
 <br>
+<form style="margin: auto; width: 400px;">
+<table>
+<tr>
+<th>
+<lable>Old Password:</lable><br>
+</th>
+<th class="rside">
+<input type="password" name="oldPass" id="oldPass" width ="150px" placeholder="Enter Old Password"><br>
+</th>
+</tr>
+<tr>
+<th>
+
+<lable>New Password: </lable><br>
+</th>
+<th class="rside">
+<input type="password" name="newPass" id="newPass" width ="150px"  placeholder="Enter New Password"><br>
+</th>
+</tr>
+<tr>
+<th>
+
+<lable>Confirm Password: </lable><br>
+</th>
+<th class="rside">
+<input type="password" name="confPass" id="confPass" width ="150px"  placeholder="Enter Confirm Password"><br>
+</th>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<th>
 <br>
-<div >
-<button type="button" id="down" value="Transactions" onclick="download()" class="btn btn-secondary float-end">Download</button>
-</div>
-</div>
-		<br>
-		<br>
-			<table class="table table-striped table-bordered" style="border:1px solid black; color:black;">
-				<thead class="thead-dark">
-					<th>ID</th>
-					<th>Acc Number</th>
-					<th>Amount</th>
-					<th>Type</th>
-					<th>Source</th>
-					<th>Date</th>
-					<th>Remarks</th>
+<input id="submit" type="button" value="Submit" onclick="changePass()" class="btn btn-success"> 
+&nbsp;
+<input type="reset" class="btn btn-warning">
+</th>
+</tr>
 
-				</thead>
-				<tbody id="statements"></tbody>
-			</table>
-
-		</div>
-	</main>
+</table>
+</form>
+</main>
+<script src="js/bootstrap.bundle.min.js"></script>
 
 
 
-	<script src="js/bootstrap.bundle.min.js"></script>
-
-	<script src="js/myScript.js"></script>
-
-	<script>
-	fetchName();
-		fetchAccountNum();
-		//fetchTransactionData();
-	</script>
+<script src="js/myScript.js"></script>
 
 
+
+<script>
+fetchName();
+fetchAccountNum();
+
+</script>
 </body>
-
 </html>

@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Hugo 0.88.1">
-	<title>DashBoard</title>
+	<title>Pay Bills</title>
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
 
@@ -56,7 +56,29 @@
 .button:hover {
     background-color: #4CAF50;
     color: white;
-}​​​​​
+}
+body{
+    margin-top:20px;
+    background:#eee;
+}
+figure.item {
+    /* To correctly align image, regardless of content height: */
+    vertical-align: top;
+    display: inline-block;
+    /* To horizontally center images and caption */
+    text-align: center;
+    /* The width of the container also implies margin around the images. */
+  
+}
+img {
+    width: 125px;
+    height: 125px;
+    background-color: grey;
+}
+.caption {
+    /* Make the caption a block so it occupies its own line. */
+    display: block;
+    }​​​​​
 	</style>
 
 
@@ -92,9 +114,6 @@
 						<a class="nav-link active" aria-current="page" href="bankStatement.html">Bank Statement</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="bankStatement.html">Bank Statement</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="payBills.html">Pay Bills</a>
 					</li>
 					<li class="nav-item">
@@ -105,7 +124,7 @@
                     </li>
                     
 				
-				</ul>&nbsp; 
+				</ul>&nbsp;
 				&nbsp;
 				<form class="d-flex">
 				 <h4 id="fullName" style="color: aliceblue;">FullName</h4> &nbsp;
@@ -116,14 +135,51 @@
 		</div>
 	</nav>
 	<br>
-<h1 style="color:black;font-family: 'Kaushan Script', cursive;"><center>World Famous</center></h1>
 	<br>
-
-	<main class="container">
-
-		<img src="images/OIP.jpg" class="img-fluid" alt="Responsive image" style="width:100%;height:500px;">
-
-	</main>
+	<div>
+<figure class="item">
+<a href="https://www.freecharge.in/electricity-bill-payment">
+<img src="images/electricity.jpg" style="margin:0px 50px 15px ;" height="250px" width="250px">
+<figcaption class="caption"><b>Electricity</b></figcaption> 
+</a>
+</figure>
+<figure class="item">
+<a href="https://www.recharge1.com/online-mobile-recharge.aspx">
+<img src="images/mobile.jpg" style="margin:0px 0px 15px;" height="250px" width="250px">
+<figcaption class="caption"><b>Mobile Recharge</b></figcaption> 
+</a>
+</figure>
+<figure class="item">
+<a href="https://www.d2h.com/quick-recharge">
+<img src="images/dth.png" style="float:right; margin:0px 50px 15px;" height="250px" width="250px">
+<figcaption class="caption"><b>DTH Recharge</b></figcaption> 
+</a>
+</figure>
+<figure class="item">	
+<a href="https://www.gas.org.in/home-lpg/">
+<img src="images/gas.jpg" style="float:right; margin:0px 0px 15px;" height="250px" width="250px">
+<figcaption class="caption"><b>Gas Booking</b></figcaption> 
+</a>
+</figure>
+<figure class="item">
+<a href="https://www.easemytrip.com/?adgroupid=1161085082876294&msclkid=cacd6d8847bc181b7e820f0dfd62de11&utm_source=bing&utm_medium=cpc&utm_campaign=Non%20Brand%20(Flights%20Booking)_Desktop&utm_term=online%20flight%20tickets%20booking&utm_content=Keywords-Ticket_EM">
+<img src="images/flight.jpg" style="float:left; margin:0px 50px 15px;" height="250px" width="250px">
+<figcaption class="caption"><b>Flight Tickets</b></figcaption> 
+</a>
+</figure>
+<figure class="item">
+<a href="https://www.movietickets.com/">
+<img src="images/movie1.jpg" style="float:left; margin:0px 0px 15px;" height="250px" width="250px">
+<figcaption class="caption"><b>Movie Tickets</b></figcaption> 
+</a> 
+</figure>
+<figure class="item">
+<a href="https://www.railyatri.in/train-ticket">
+<img src="images/train.jpg" style="float:left; margin:0px 50px 15px;" height="250px" width="250px">
+<figcaption class="caption"><b>Train Tickets</b></figcaption> 
+</a>  
+</figure>
+</div>
 
 
 	<script src="js/bootstrap.bundle.min.js"></script>

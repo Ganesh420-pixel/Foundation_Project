@@ -9,7 +9,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 		<meta name="generator" content="Hugo 0.88.1">
-		<title>Fund Transfer</title>
+		<title>Profile Page</title>
 
 		<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
 
@@ -19,6 +19,10 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
 		<style>
+		
+		  .float-right{
+                 float:right;
+               }
 			.bd-placeholder-img {
 				font-size: 1.125rem;
 				text-anchor: middle;
@@ -43,6 +47,7 @@
 
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 			<div class="container-fluid">
+			<a class="navbar-brand" href="dashBoard.html">World Famous Bank</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
 					aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -65,9 +70,13 @@
 							<a class="nav-link active" aria-current="page" href="bankStatement.html">Bank Statement</a>
 						</li>
 						<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="payBills.html">Pay Bills</a>
+					</li>
+						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="profile.html">Profile</a>
 						</li>
 					</ul>
+					
 					<form class="d-flex">
 					  <h4 id="fullName" style="color: aliceblue;">FullName</h4> &nbsp;
 						<h4 id="accountNum" style="color: aliceblue;">Account Number</h4> &nbsp; <a
@@ -82,6 +91,7 @@
 		<main class="container">
 
 			<h1 style="color: black"><center><u><i>Customer Profile</i></u></center></h1>
+			<a  class="float-right" href="changePass.html">Change Password?</a>
 			<br>
 
 			<div class="container" style="width: 300px; text-align: center;">
